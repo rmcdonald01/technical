@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/weather/forecast', 'WeatherForecastContoller@index')->name('weather.forecast.dashboard');
+Route::post('/email', 'WeatherForecastContoller@create')->name('weather.email');
